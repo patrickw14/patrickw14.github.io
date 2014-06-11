@@ -1,0 +1,46 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function OnDragStart (event) {
+            if (event.dataTransfer) {
+                var format = "Text";
+                var textData = "Dragged text!";
+                event.dataTransfer.setData(format, textData); 
+                
+            }
+        }
+
+        function OnDropTarget (event) {
+            if (event.dataTransfer) {
+                var format = "Text";
+                var textData = event.dataTransfer.getData (format);
+                if (!textData) {
+                    textData = "<span style='color:red'>The data transfer contains no text data.</span>";
+                }
+                
+                var targetDiv = document.getElementById ("target");
+                targetDiv.innerHTML = textData;
+            }
+            else {
+                alert ("Your browser does not support the dataTransfer object.");
+            }
+            
+            if (event.stopPropagation) {
+                event.stopPropagation ();
+            }
+            else {
+                event.cancelBubble = true;
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div draggable="true" ondragstart="OnDragStart (event)" style="width:300px; height:100px; background-color:#80f0f0;">
+        Drag me!!
+    </div>
+    <div id="target" ondragenter="return false;" ondragover="return false;" ondrop="return OnDropTarget (event);"
+        style="width:300px; height:100px; background-color:#80f080;">
+    </div>
+</body>
+</html>
