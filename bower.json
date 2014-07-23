@@ -1,0 +1,26 @@
+{
+  "name": "pacific-highlander",
+  "version": "0.0.0",
+  "homepage": "http://www.pacifichighlander.com",
+  "authors": [
+    "Patrick Wilson <patrick.wilson.14@gmail.com>"
+  ],
+  "description": "Beer brewing",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "beer",
+    "brewing"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
